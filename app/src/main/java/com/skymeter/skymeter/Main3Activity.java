@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.graphics.ColorUtils;
@@ -34,7 +35,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Hashtable;
+import java.util.Locale;
 import java.util.Map;
 
 //Actividad donde se toman las fotos
@@ -59,6 +63,8 @@ public class Main3Activity extends AppCompatActivity{
     //Atributos que mandamos al servidor
     private String KEY_IMAGEN = "foto";
     private String KEY_NOMBRE = "nombre";
+    private String KEY_FECHA = "fecha";
+    private String KEY_MODELO = "modelo";
 
 
     @Override
@@ -271,9 +277,21 @@ public class Main3Activity extends AppCompatActivity{
                 //Obtenemos el nombre del edittext
                 String nombre = editText.getText().toString().trim();
 
+                //Valor de la fecha
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss", Locale.getDefault());
+                Date date = new Date();
+                String fecha = dateFormat.format(date);
+
+                //Obtener modelo
+                String modelo =  Build.MANUFACTURER + " " + Build.MODEL + " " + Build.VERSION.RELEASE + " " + Build.VERSION_CODES.class.getFields()[Build.VERSION.SDK_INT].getName();
+
+
+
                 //Agregando de parámetros
                 params.put(KEY_IMAGEN, imagen);
                 params.put(KEY_NOMBRE, nombre);
+                params.put(KEY_FECHA, fecha);
+                params.put(KEY_MODELO, modelo);
 
                 //Parámetros de retorno
                 return params;

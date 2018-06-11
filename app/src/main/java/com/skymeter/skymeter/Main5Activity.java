@@ -12,6 +12,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.location.LocationProvider;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,9 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -43,6 +46,7 @@ public class Main5Activity extends AppCompatActivity   {
     TextView mensaje2;
     private Button botonGuardar;
     Button finish;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +83,16 @@ public class Main5Activity extends AppCompatActivity   {
     }
     //Insertamos los datos a nuestra webService
     private boolean insertar(){
+
+        //Valor de la fecha
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss", Locale.getDefault());
+        Date date = new Date();
+        String fecha = dateFormat.format(date);
+
+        //Obtener modelo
+        String modelo =  Build.MANUFACTURER + " " + Build.MODEL + " " + Build.VERSION.RELEASE + " " + Build.VERSION_CODES.class.getFields()[Build.VERSION.SDK_INT].getName();
+
+
         HttpClient httpClient;
         List<NameValuePair> nameValuePairs;
         HttpPost httpPost;
@@ -88,6 +102,8 @@ public class Main5Activity extends AppCompatActivity   {
         nameValuePairs = new ArrayList<NameValuePair>(4);
         nameValuePairs.add(new BasicNameValuePair("coordenadas",mensaje1.getText().toString().trim()));
         nameValuePairs.add(new BasicNameValuePair("direccion",mensaje2.getText().toString().trim()));
+        nameValuePairs.add(new BasicNameValuePair("fecha", fecha.toString().trim()));
+        nameValuePairs.add(new BasicNameValuePair("modelo", modelo.toString().trim()));
         try {
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             httpClient.execute(httpPost);

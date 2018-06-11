@@ -10,17 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Sky Meter instructions"
-        android:textSize="35dp"
+        android:textSize="25dp"
         android:layout_marginLeft="15dp"
         android:textColor="#000000" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="1. Press START button. \n\n 2. Cover camera and press DARK button. \n\n 3. (Optional) Submit your country name and measurement to us. \n\n 4. Press NEXT button. \n\n 5. Uncover the camera and aim to the point figth above your head. Press SKY button. \n\n 6. (Optional) Add cloud concentration and submit your measurement to us."
-        android:layout_marginTop="100dp"
+        android:text="1. Press START button. \n\n 2. Cover camera and press DARK button. \n\n 3. (Optional) Submit your country name and measurement to us. \n\n 4. Press NEXT button. \n\n 5. Uncover the camera and aim to the point rigth above your head. Press SKY button. \n\n 6. (Optional) Add clouds concentration and submit your measurement to us. \n\n 7. Press NEXT button. \n\n 8. See your coordinates and address and (optional) submit your information to us. "
+        android:layout_marginTop="60dp"
         android:layout_marginLeft="20dp"
-        android:textSize="18dp"
+        android:textSize="16dp"
         android:textColor="#000000" />
 
     <Button
@@ -33,6 +33,8 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:layout_marginTop="450dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"/>
 
 </android.support.constraint.ConstraintLayout>

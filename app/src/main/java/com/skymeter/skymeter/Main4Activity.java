@@ -41,7 +41,7 @@ import java.util.Hashtable;
 import java.util.Locale;
 import java.util.Map;
 
-//Tercera actividad donde se toman las fotos
+//Actividad donde se toman las fotos SKY
 public class Main4Activity extends AppCompatActivity{
 
     //Variables para tomar la foto
@@ -52,13 +52,13 @@ public class Main4Activity extends AppCompatActivity{
     private EditText editText;
 
     //Boton para ir a la siguiente actividad
-    //Button boton;
+    Button boton;
 
     //Variables para subir la foto
     private Button btnSubir;
     private Bitmap bitmap;
     private int PICK_IMAGE_REQUEST = 1;
-    private String UPLOAD_URL = "http://serverapp.webcindario.com/upload2.php";
+    private String UPLOAD_URL = "http://serverapp.webcindario.com/upload2.php"; //Direccion url
 
     //Atributos que se mandan al servidor
     private String KEY_IMAGEN = "foto";
@@ -92,15 +92,15 @@ public class Main4Activity extends AppCompatActivity{
             }
         });
 
-   /*     //Para ir a la actividad SKY
-        //Actividad dark
+     //Para ir a la siguiente actividad
+
         boton=(Button)findViewById(R.id.button);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main4Activity.this, Main4Activity.class));
+                startActivity(new Intent(Main4Activity.this, Main5Activity.class));
             }
-        }); */
+        });
 
         //Edittext
         editText = (EditText) findViewById(R.id.editText);

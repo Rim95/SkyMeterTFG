@@ -84,6 +84,7 @@
 
 
     <!-- ImageView DARK -->
+    <!-- No es visible para el usuario -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

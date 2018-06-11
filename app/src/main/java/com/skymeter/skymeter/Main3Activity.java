@@ -37,7 +37,7 @@ import java.io.IOException;
 import java.util.Hashtable;
 import java.util.Map;
 
-//Segunda actividad donde se toman las fotos
+//Actividad donde se toman las fotos
 public class Main3Activity extends AppCompatActivity{
 
     //Variables para tomar la foto
@@ -54,7 +54,7 @@ public class Main3Activity extends AppCompatActivity{
     private Button btnSubir;
     private Bitmap bitmap;
     private int PICK_IMAGE_REQUEST = 1;
-    private String UPLOAD_URL = "http://serverapp.webcindario.com/upload2.php";
+    private String UPLOAD_URL = "http://serverapp.webcindario.com/upload2.php"; //Direccion donde se mandan las fotos
 
     //Atributos que mandamos al servidor
     private String KEY_IMAGEN = "foto";
@@ -87,7 +87,6 @@ public class Main3Activity extends AppCompatActivity{
         });
 
         //Para ir a la actividad SKY
-        //Actividad dark
         boton=(Button)findViewById(R.id.button);
         boton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Actividad dark
+        //Para acceder a la actividad de DARK (comenzar a usar la aplicacion)
         empezar=(Button)findViewById(R.id.start);
         empezar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Instrucciones
+        //Para acceder a la actividad instrucciones
         instructions = (Button)findViewById(R.id.instructions);
         instructions.setOnClickListener(new View.OnClickListener() {
             @Override
